@@ -13,7 +13,7 @@ class HotelsController < ApplicationController
   # GET /hotels/1.json
   def show
     @hcmts = @hotel.hcmts.paginate(page: params[:page])
-    @hcmt = current_user.hcmt.build if signed_in?
+    @hcmt = current_user.hcmts.build if signed_in?
     @hcmt.hotel_id = @hotel.id if signed_in?
   end
 
@@ -33,10 +33,10 @@ class HotelsController < ApplicationController
 
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_back_or @hotel}
+        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
         format.json { render action: 'show', status: :created, location: @hotel }
       else
-        format.html { redirect_back_or 'new' }
+        format.html { render action 'new' }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }
       end
     end
