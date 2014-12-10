@@ -34,7 +34,7 @@
   <ol class="hcmts">
     <% @hcmts.each do |hcmt| %>
       <li>
-        <span class="user_id"><%= hcmt.user.nickname %></span>
+        <span class="user_id"><%= link_to hcmt.user.nickname,hcmt.user %></span>
         <span class="content"><%= hcmt.content %></span>
         <span class="timestamp">Posted <%= time_ago_in_words(hcmt.created_at) %> ago.</span>
       </li>

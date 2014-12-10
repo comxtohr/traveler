@@ -34,7 +34,7 @@
   <ol class="bcmts">
     <% @bcmts.each do |bcmt| %>
       <li>
-        <span class="user_id"><%= bcmt.user.nickname %></span>
+        <span class="user_id"><%= link_to bcmt.user.nickname,bcmt.user %></span>
         <span class="content"><%= bcmt.content %></span>
         <span class="timestamp">Posted <%= time_ago_in_words(bcmt.created_at) %> ago.</span>
       </li>

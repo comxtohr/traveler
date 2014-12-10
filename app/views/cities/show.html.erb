@@ -19,7 +19,7 @@
   <ol class="foods">
     <% @foods.each do |food| %>
       <li>
-        <span class="foodname"><%= food.foodname %></span>
+        <span class="foodname"><%= link_to food.foodname, food %></span>
       </li>
     <% end %>
   </ol>
@@ -57,7 +57,7 @@
   <ol class="attractions">
     <% @attractions.each do |attraction| %>
       <li>
-        <span class="attracname"><%= attraction.attracname %></span>
+        <span class="attracname"><%= link_to attraction.attracname, attraction %></span>
       </li>
     <% end %>
   </ol>

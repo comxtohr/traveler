@@ -24,7 +24,7 @@
   <ol class="hotels">
     <% @hotels.each do |hotel| %>
       <li>
-        <span class="hotelname"><%= hotel.hotelname %></span>
+        <span class="hotelname"><%= link_to hotel.hotelname, hotel %></span>
         <span class="address"><%= hotel.address %></span>
         <span class="tel"><%= hotel.tel %></span>
         <span class="price"><%= hotel.price %></span>
@@ -39,7 +39,7 @@
   <ol class="acmts">
     <% @acmts.each do |acmt| %>
       <li>
-        <span class="user_id"><%= acmt.user.nickname %></span>
+        <span class="user_id"><%= link_to acmt.user.nickname,acmt.user %></span>
         <span class="content"><%= acmt.content %></span>
         <span class="timestamp">Posted <%= time_ago_in_words(acmt.created_at) %> ago.</span>
       </li>

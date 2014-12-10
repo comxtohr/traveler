@@ -17,8 +17,8 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><%= request.user.nickname %></td>
-        <td><%= request.city.cityname %></td>
+        <td><%= link_to request.user.nickname, request.user %></td>
+        <td><%= link_to request.city.cityname, request.city %></td>
         <td><%= request.time %></td>
         <td><%= request.number %></td>
         <td><%= request.note %></td>

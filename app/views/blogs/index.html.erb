@@ -17,8 +17,8 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= blog.user.nickname %></td>
-        <td><%= blog.city.cityname %></td>
+        <td><%= link_to blog.user.nickname, blog.user %></td>
+        <td><%= link_to blog.city.cityname, blog.city %></td>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
         <td><%= blog.image %></td>
